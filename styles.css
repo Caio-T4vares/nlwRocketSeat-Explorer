@@ -1,0 +1,10 @@
+ul {
+  list-style: none;
+}
+a img {
+  height: 32px;
+  width: 32px;
+}
+body {
+  background-image: url(./Fundo.png);
+}
