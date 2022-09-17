@@ -3,10 +3,12 @@
   padding: 0px;
   box-sizing: border-box;
 }
+ul {
+  list-style: none;
+}
 section ul {
   display: flex;
   gap: 16px;
-  list-style: none;
   margin-top: 24px;
   flex-wrap: wrap;
 }
@@ -28,7 +30,10 @@ main {
   display: grid;
   gap: 24px;
 }
-header img {
+header div:hover {
+  transform: scale(1.1);
+}
+header div img {
   width: 100%;
   border-radius: 50%;
 }
@@ -41,14 +46,18 @@ header div {
     #43e7ad 50.52%,
     #e2d45c 100%
   );
+  border-radius: 50%;
+  display: flex;
+  padding: 4px;
+  transition: transform 0.3s;
 }
 header {
   padding-top: 32px;
-  text-align: center;
+  height: calc(120px + 32px);
 }
 section {
   color: #ffffff;
-  margin: 30px 0px 0px 0px;
+  padding-top: 4px;
   background-image: linear-gradient(
     90deg,
     #9572fc 0%,
@@ -60,7 +69,8 @@ section {
 }
 section div {
   background-color: #2a2634;
-  padding: 24px 32px 32px 32px;
+  padding: 32px;
+  padding-top: 24px;
   border-radius: 8px;
 }
 section p {
@@ -68,7 +78,6 @@ section p {
   letter-spacing: -0.18px;
 }
 section h2 {
-  font-weight: 900;
   letter-spacing: -0.47px;
 }
 .lista-Streamers-canais img {
@@ -82,4 +91,45 @@ section h2 {
 }
 .lista-redes img {
   width: 32px;
+}
+section ul li {
+  transition: transform 0.3s;
+}
+section ul li:hover {
+  transform: scale(1.1);
+}
+header div {
+  animation: fromTop 0.7s 0.2s backwards;
+}
+main section {
+  animation: toTop 0.7s backwards;
+}
+main section:nth-child(1) {
+  animation-delay: 0s;
+}
+main section:nth-child(2) {
+  animation-delay: 0.4s;
+}
+main section:nth-child(3) {
+  animation-delay: 0.8s;
+}
+@keyframes fromTop {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes toTop {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
